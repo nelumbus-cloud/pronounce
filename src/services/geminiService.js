@@ -1,6 +1,13 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
-const genAI = new GoogleGenerativeAI("AIzaSyCA0H4soWr0GEoWdVSCNSXWLZAPaJITYIQ");
+// Read Gemini/Generative AI key from environment. For CRA use REACT_APP_GEMINI_API_KEY
+const GEMINI_API_KEY = process.env.REACT_APP_GEMINI_API_KEY || process.env.GEMINI_API_KEY;
+
+if (!GEMINI_API_KEY) {
+    console.warn('Gemini API key is not set. Set REACT_APP_GEMINI_API_KEY (or GEMINI_API_KEY) in your environment.');
+}
+
+const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
 
 export async function generateSentence(word) {
     try {
