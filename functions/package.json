@@ -1,0 +1,10 @@
+{
+    "name": "pronouncd-functions",
+    "description": "Firebase Cloud Functions for Gemini sentence generation",
+    "main": "index.js",
+    "dependencies": {
+        "firebase-functions": "^4.0.0",
+        "@google-cloud/secret-manager": "latest",
+        "@google/generative-ai": "^0.5.0"
+    }
+}
